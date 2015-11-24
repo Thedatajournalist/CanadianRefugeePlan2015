@@ -196,39 +196,7 @@
         };
         
         
-// draw legend 
 
-    var colormap = d3.scale.ordinal()
-           .domain(["0.33","0.40","0.47","0.50","no data"])
-           .range(["rgb(255, 94, 0)","rgb(255,136,64)","rgb(255,178,128)","rgb(255, 210, 179)","rgb(204,204,204)"]);
-//     console.log(colourmap[0]);
-//      
-// for output rbg color , not needed for the function
-    function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
-}                
-
-//    var svg = d3.select("svg");
-
-    svg.append("g")
-        .attr("class", "legendLinear")
-        .attr("transform", "translate(170,10)");
-
-    var legendLinear = d3.legend.color()
-                    .shapeWidth(30)
-//                    .cells([0.33, 0.37,0.43,0.47,0.50])  
-                    .orient('vertical')
-                    .scale(colormap);
-
-    svg.select(".legendLinear")
-            .call(legendLinear);
-          
-            
 
     </script>
     
