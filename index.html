@@ -230,32 +230,13 @@
           
             
 
-// draw circle legends         
-        
-     var linearSize=d3.scale.linear().domain([0,10000]).range([0,10]);   
-
-     svg.append("g")
-        .attr("class", "legendSize")
-        .attr("transform", "translate(750, 10)");
-
-     var legendSize = d3.legend.size()
-                .scale(linearSize)
-                .shape('circle')
-                .shapePadding(7)
-                .labelOffset(10)    
-                .labels([' ','2500','5000','7500','10000'])
-//                 .shapeWidth(100)
-                .labelAlign("start")
-                .orient("vertical");
-                
-        svg.select(".legendSize")
-                .call(legendSize);       
-
     </script>
     
 </div>
 
 <div id='footer'>
+	Data sourced from <a href="http://angusreid.org/refugee-resettlement/" target="_blank"> Angus Reid Institute</a> <br> 
+    <a href="http://blogs.vancouversun.com/2015/11/19/syrian-refugees-where-are-they-likely-to-go/" target="_blank"> The Vancouver Sun.<br>
     Made by <a href='http://www.stellaywu.com' target="_blank">Stella Wu</a>, 2015.<br><a href='http://www.thedatajournalist.com' target="_blank">TheDataJournalist.com</a>
 </div>
 
