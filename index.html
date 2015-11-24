@@ -230,6 +230,26 @@
           
             
 
+// draw circle legends         
+        
+     var linearSize=d3.scale.linear().domain([0,10000]).range([0,10]);   
+
+     svg.append("g")
+        .attr("class", "legendSize")
+        .attr("transform", "translate(750, 10)");
+
+     var legendSize = d3.legend.size()
+                .scale(linearSize)
+                .shape('circle')
+                .shapePadding(7)
+                .labelOffset(10)    
+                .labels([' ','2500','5000','7500','10000'])
+//                 .shapeWidth(100)
+                .labelAlign("start")
+                .orient("vertical");
+                
+        svg.select(".legendSize")
+                .call(legendSize);       
 
     </script>
     
