@@ -130,44 +130,6 @@
     } : null;
 }                
 
-//    var svg = d3.select("svg");
-
-    svg.append("g")
-        .attr("class", "legendLinear")
-        .attr("transform", "translate(170,10)");
-
-    var legendLinear = d3.legend.color()
-                    .shapeWidth(30)
-//                    .cells([0.33, 0.37,0.43,0.47,0.50])  
-                    .orient('vertical')
-                    .scale(colormap);
-
-    svg.select(".legendLinear")
-            .call(legendLinear);
-          
-            
-
-// draw circle legends         
-        
-     var linearSize=d3.scale.linear().domain([0,10000]).range([0,10])   
-
-     svg.append("g")
-        .attr("class", "legendSize")
-        .attr("transform", "translate(750, 10)");
-
-     var legendSize = d3.legend.size()
-                .scale(linearSize)
-                .shape('circle')
-                .shapePadding(7)
-                .labelOffset(10)    
-                .labels([' ','2500','5000','7500','10000'])
-//                 .shapeWidth(100)
-                .labelAlign("start")
-                .orient("vertical");
-                
-        svg.select(".legendSize")
-                .call(legendSize);       
-       
        
 //    draw circles
 
@@ -206,6 +168,45 @@
                     .style("opacity",0);
                 }) 
         }); 
+
+//    var svg = d3.select("svg");
+
+    svg.append("g")
+        .attr("class", "legendLinear")
+        .attr("transform", "translate(170,10)");
+
+    var legendLinear = d3.legend.color()
+                    .shapeWidth(30)
+//                    .cells([0.33, 0.37,0.43,0.47,0.50])  
+                    .orient('vertical')
+                    .scale(colormap);
+
+    svg.select(".legendLinear")
+            .call(legendLinear);
+          
+            
+
+// draw circle legends         
+        
+     var linearSize=d3.scale.linear().domain([0,10000]).range([0,10])   
+
+     svg.append("g")
+        .attr("class", "legendSize")
+        .attr("transform", "translate(750, 10)");
+
+     var legendSize = d3.legend.size()
+                .scale(linearSize)
+                .shape('circle')
+                .shapePadding(7)
+                .labelOffset(10)    
+                .labels([' ','2500','5000','7500','10000'])
+//                 .shapeWidth(100)
+                .labelAlign("start")
+                .orient("vertical");
+                
+        svg.select(".legendSize")
+                .call(legendSize);       
+       
 
 
 //      updatedata
