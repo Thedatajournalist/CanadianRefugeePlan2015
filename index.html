@@ -119,44 +119,16 @@
            .domain(["0.33","0.40","0.47","0.50","no data"])
            .range(["rgb(255, 94, 0)","rgb(255,136,64)","rgb(255,178,128)","rgb(255, 210, 179)","rgb(204,204,204)"]);
 //     console.log(colourmap[0]);
-
-//    draw circles
-
-     d3.csv("refuge.csv",function(data) {
-//        console.log(data)    
-        svg.append("g")
-        .attr("class","bubble")
-        .selectAll("circle")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("cx",function(d) {
-//                console.log(d.lon, d.lat, projection([d.lon, d.lat]))    
-                return projection([d.lon, d.lat])[0];
-                })
-        .attr("cy",function(d) {
-                return projection([d.lon, d.lat])[1];
-                })
-        .attr("r",function(d) {
-                return rScale(+d['NumberOfRefugee']);
-                })
-        .style("fill",function(d) {
-                return colorbubble(+d['NumberOfRefugee']); 
-                })        
-        .on("mouseover", function(d) {
-                textbox.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                textbox.html((d['province'])+" refugees: "+(+d['NumberOfRefugee'])+"<br>"+"population: "+(+d['Population'])+"<br>"+"support: "+(+d['support']))
-                    .style("left",(d3.event.pageX)+"px")
-                    .style("top",(d3.event.pageY-28)+"px");
-                })    
-        .on("mouseout",function(d) {
-                textbox.transition()
-                    .duration(600)
-                    .style("opacity",0);
-                }) 
-        }); 
+//      
+// for output rbg color , not needed for the function
+    function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}                
 
 //    var svg = d3.select("svg");
 
@@ -196,6 +168,44 @@
         svg.select(".legendSize")
                 .call(legendSize);       
        
+       
+//    draw circles
+
+     d3.csv("refuge.csv",function(data) {
+//        console.log(data)    
+        svg.append("g")
+        .attr("class","bubble")
+        .selectAll("circle")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("cx",function(d) {
+//                console.log(d.lon, d.lat, projection([d.lon, d.lat]))    
+                return projection([d.lon, d.lat])[0];
+                })
+        .attr("cy",function(d) {
+                return projection([d.lon, d.lat])[1];
+                })
+        .attr("r",function(d) {
+                return rScale(+d['NumberOfRefugee']);
+                })
+        .style("fill",function(d) {
+                return colorbubble(+d['NumberOfRefugee']); 
+                })        
+        .on("mouseover", function(d) {
+                textbox.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                textbox.html((d['province'])+" refugees: "+(+d['NumberOfRefugee'])+"<br>"+"population: "+(+d['Population'])+"<br>"+"support: "+(+d['support']))
+                    .style("left",(d3.event.pageX)+"px")
+                    .style("top",(d3.event.pageY-28)+"px");
+                })    
+        .on("mouseout",function(d) {
+                textbox.transition()
+                    .duration(600)
+                    .style("opacity",0);
+                }) 
+        }); 
 
 
 //      updatedata
