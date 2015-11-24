@@ -1,0 +1,223 @@
+body {
+	font-family:Helvetica;
+	width:100%;
+	height:100%;
+	margin: 2em;
+}
+
+#project-header {
+	font-family:Helvetica;
+    text-align:center;
+	position:relative;
+	font-weight: 400;
+	font-size: 20px;
+	left:0;
+	top:0;
+	padding:2px;
+	width:100%;
+
+}
+
+
+#description {
+	position:relative;
+	font-size: 18px;
+	left:20px;
+	padding:2px;
+	width:90%;
+}
+
+
+ 
+.button {
+    -moz-box-shadow: 3px 4px 3px 1px #899599;
+    -webkit-box-shadow: 3px 4px 3px 1px #899599;
+    box-shadow: 3px 4px 3px 1px #899599;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
+    background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-webkit-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-o-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:-ms-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+    background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bab1ba',GradientType=0);
+    background-color:#ededed;
+    -moz-border-radius:42px;
+    -webkit-border-radius:42px;
+    border-radius:42px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    color:#3a8a9e;
+    font-family:Arial;
+    font-size:28px;
+    font-weight:bold;
+    padding:15px 28px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+}
+.button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
+    background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
+    background-color:#bab1ba;
+}
+.button:active {
+    position:relative;
+    top:1px;
+}
+
+    
+#map{
+    text-align:center;
+    }
+
+
+#footer {
+	position:absolute;
+	text-align:right;
+	height: 100px;
+	margin:0;
+	top:2500px;
+	right:0;
+	bottom:0;
+	width:98%;
+}
+
+
+.left-labels,
+	.labels {
+		font-family: sans-serif;
+		font-size: 10px;
+		opacity:0.8;
+	}
+	
+	.labels:hover {
+	border:2px solid gray;/*black;*/
+	border-top:1px solid lightgray;
+	border-left:1px solid lightgray;
+	border-bottom:1px solid lightgray;
+	background-color: white; /*#4F4F4F;*/
+}
+
+
+.chart-title {
+    font-family:sans-serif;
+    font-size: 22px;
+	text-anchor: middle;
+	font-weight: bold;
+}
+
+.axis {
+    font-size:20px;
+}
+	
+	
+text.label { 
+    fill: #939393;
+    opacity:1.0; 
+    }
+text.label.start { 
+    text-anchor: end; 
+    }
+    
+line.slope { 
+    stroke: #808080; 
+    opacity:1.0;
+    stroke-width: 0.5; 
+    }
+    
+.missing text.label {
+    display: none; 
+    }
+   
+.missing line.slope { 
+    display: none; 
+    }
+
+.over text.label { 
+    fill:#44382c ;         /*#bb2629,#aa7139, #dd8127*/          
+    font-size: 1.6em ; 
+    font-weight: bold; 
+    z-index:9999;
+    opacity:1; 
+    transition: all 0.5s ease;
+    }
+
+.over line.slope { 
+    stroke: #44382c; 
+    stroke-width: 2; 
+    z-index:9999;
+    opacity:1; 
+    }
+
+.click text.label { 
+    fill:#44382c ;         /*#bb2629,#aa7139, #dd8127*/          
+    font-size: 1.6em ; 
+    font-weight: bold; 
+    z-index:9999;
+    opacity:1; 
+    transition: all 0.5s ease;
+    }
+
+.click line.slope { 
+    stroke: #44382c; 
+    stroke-width: 2; 
+    z-index:9999;
+    opacity:1; 
+    transition: all 0.5s ease;
+    }
+
+
+.bubble {
+    fill-opacity: .9;
+    stroke:#fff;
+    stroke-width:0.1px;    
+}    
+
+
+
+/*var supportdata=[0.33, 0.37, 0.37, 0.50, 0.50, 0.50, 0.0, 0.0, 0.43, 0.50, 0.0, 0.47,0.40];
+                    1   2       3   4       5   6       7   8   9       10  11  12      13
+            (255,102,13), (255,195,153)
+
+       "Alberta","Saskatchewan","Manitoba","Newfoundland & Labrador", "Prince Edward Island",
+"Nova Scotia", "Northwest Territories", "Nunavut",  "Ontario",  "New Brunswick", "Yukon Territory"
+ "British Columbia", "Quebec", */
+   
+
+
+.province0 { fill: rgb(255, 94, 0); }
+.province1 { fill: rgb(255,119,38); }
+.province2 { fill: rgb(255,119,38); }
+.province3 { fill: rgb(255, 210, 179); }    /*255,195,153*/
+.province4 { fill: rgb(255, 210, 179); }
+.province5 { fill: rgb(255, 210, 179); }
+.province6 { fill: rgb(204,204,204); }
+.province7 { fill: rgb(204,204,204); }
+.province8 { fill: rgb(255,153,89); }
+.province9 { fill: rgb(255, 210, 179); }
+.province10 { fill: rgb(204,204,204); }
+.province11 { fill: rgb(255,178,128); }
+.province12 { fill: rgb(255,136,64); }
+
+
+
+
+
+div.tooltip{
+    position:absolute;
+    text-align:center;
+    width:250px;
+    height:80px;
+    padding:4px;
+    font:20px sans-serif;
+    background: #ddd;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events:none;
+}    
+
