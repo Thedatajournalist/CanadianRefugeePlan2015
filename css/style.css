@@ -10,7 +10,7 @@ body {
     text-align:center;
 	position:relative;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 18px;
 	left:0;
 	top:0;
 	padding:2px;
@@ -18,17 +18,29 @@ body {
 
 }
 
-
+# wrapper{
+    margin-right:200px;
+    }
+    
+#input{
+    margin-left:50px;
+    margin-top:10px;
+    float:left;
+    width:25%;
+    position:relative;
+}
+           
 #description {
-	position:relative;
-	font-size: 18px;
+    float:right;
+    width:700px;
+    margin-left:-300px;
+    /*	position:relative;*/
+	font-size: 14px;
 	left:20px;
 	padding:2px;
-	width:90%;
 }
 
-
- 
+     
 .button {
     -moz-box-shadow: 3px 4px 3px 1px #899599;
     -webkit-box-shadow: 3px 4px 3px 1px #899599;
@@ -49,7 +61,7 @@ body {
     cursor:pointer;
     color:#3a8a9e;
     font-family:Arial;
-    font-size:28px;
+    font-size:18px;
     font-weight:bold;
     padding:15px 28px;
     text-decoration:none;
@@ -221,3 +233,6 @@ div.tooltip{
     pointer-events:none;
 }    
 
+.legendSize{
+    fill:rgb(163, 194, 194);
+    }
