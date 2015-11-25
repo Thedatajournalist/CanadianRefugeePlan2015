@@ -21,17 +21,13 @@ body {
 
 #description {
 	position:relative;
-	font-size: 14px;
-	margin-left:20px;
-    margin-right:20px;
+	font-size: 18px;
+	left:20px;
 	padding:2px;
 	width:90%;
-    text-align: justify;
 }
 
-#input {
-    text-align:center;
-}
+
  
 .button {
     -moz-box-shadow: 3px 4px 3px 1px #899599;
@@ -53,7 +49,7 @@ body {
     cursor:pointer;
     color:#3a8a9e;
     font-family:Arial;
-    font-size:20px;
+    font-size:28px;
     font-weight:bold;
     padding:15px 28px;
     text-decoration:none;
